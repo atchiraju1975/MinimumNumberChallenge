@@ -5,7 +5,7 @@ import java.util.Scanner;
 
 public class MinNumberChallenge {
 
-    private static Scanner scanner = new Scanner(System.in);
+    private static final Scanner scanner = new Scanner(System.in);
 
    // static MinNumberChallenge minNumberChallenge = new MinNumberChallenge();
 
@@ -13,9 +13,9 @@ public class MinNumberChallenge {
 
         int size = getArraySize();
 
-        int[] myArray = new int[size] ;
-        myArray = initialiseArray(myArray);
-        myArray = readIntegers(size);
+       // int[] myArray = new int[size] ;
+       // myArray = initialiseArray(myArray);
+       int[] myArray = readIntegers(size);
 
         int myMinNumber = findMinimum(myArray);
 
@@ -29,12 +29,12 @@ public class MinNumberChallenge {
         return count;
     }
 
-    public static int[] initialiseArray(int[] myArray){
-        for(int i=0;i<myArray.length;i++){
-            myArray[i]=0;
-        }
-        return myArray;
-    }
+//    public static int[] initialiseArray(int[] myArray){
+//        for(int i=0;i<myArray.length;i++){
+//            myArray[i]=0;
+//        }
+//        return myArray;
+//    }
 
     public static int[] readIntegers(int count){
         int[] myIntArray = new int[count];
@@ -50,9 +50,9 @@ public class MinNumberChallenge {
 
         int minNumber = Integer.MAX_VALUE;
 
-        for(int i=0;i<arrayFull.length;i++){
-            if(arrayFull[i]<minNumber){
-                minNumber=arrayFull[i];
+        for (int j : arrayFull) {
+            if (j < minNumber) {
+                minNumber = j;
             }
         }
 
